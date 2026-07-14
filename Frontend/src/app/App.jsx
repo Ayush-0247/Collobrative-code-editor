@@ -113,9 +113,23 @@ function App() {
         <h2 className="text-2xl font-bold p-4 border-b border-gray-300">Users</h2>
         <ul className="p-4">
           {users.map((user, index) => (
-            <li key={index} className="p-2 bg-blue-900 text-white rounded mb-2">
-              {user.username}
-            </li>
+            // <li key={index} className="p-2 bg-blue-900 text-white rounded mb-2">
+            //  user :  {user.username}
+            // </li>
+
+              <li key={index} className={`p-2
+
+                ${
+                  user.username === username ?
+                  "bg-green-500 text-white"
+                  : "bg-gray-500 text-white"
+                }
+               
+               
+                rounded mb-2`}>
+               {user.username}
+             </li>
+            
           ))}
         </ul>
 
