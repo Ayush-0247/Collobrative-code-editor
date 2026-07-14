@@ -82,14 +82,14 @@ function App() {
   if (!username) {
     return (
       <main className="h-screen w-full bg-blue-300 flex gap-4 p-4 items-center justify-center" >
-        <div className=""><h1 className="flex items-center justify-center my-6">ENTER YOUR USERNAME</h1>
+        <div className=""><h1 className="flex items-center text-xl font-bold italic justify-center my-6">ENTER YOUR USERNAME</h1>
         <form
           onSubmit={handleJoin}
-          className="flex flex-col gap-4 border p-10 rounded-xl shadow-2xl bg-white">
+          className="flex flex-col gap-4 border p-6 rounded-xl shadow-2xl bg-white">
           <input
             type="text"
             placeholder="Enter your username"
-            className="p-2 rounded-lg  text-gray-800 border border-gray-400"
+            className="p-3 w-60 rounded-lg  text-gray-800 border border-gray-400"
             name="username"
           />
           <button
