@@ -81,37 +81,39 @@ function App() {
 
   if (!username) {
     return (
-      <main className="h-screen w-full bg-gray-950 flex gap-4 p-4 items-center justify-center" >
+      <main className="h-screen w-full bg-blue-300 flex gap-4 p-4 items-center justify-center" >
+        <div className=""><h1 className="flex items-center justify-center my-6">ENTER YOUR USERNAME</h1>
         <form
           onSubmit={handleJoin}
-          className="flex flex-col gap-4">
+          className="flex flex-col gap-4 border p-10 rounded-xl shadow-2xl bg-white">
           <input
             type="text"
             placeholder="Enter your username"
-            className="p-2 rounded-lg bg-gray-800 text-white"
+            className="p-2 rounded-lg  text-gray-800 border border-gray-400"
             name="username"
           />
           <button
-            className="p-2 rounded-lg bg-amber-50 text-gray-950 font-bold"
+            className="p-2 rounded-lg bg-green-300 text-gray-950 font-bold"
           >
             Join
           </button>
         </form>
+        </div>
       </main>
     )
   }
 
   return (
     <main
-      className="h-screen w-full bg-gray-950 flex gap-4 p-4"
+      className="h-screen w-full bg-blue-300 flex gap-2 p-3"
     >
       <aside
-        className="h-full w-1/4 bg-amber-50 rounded-lg "
+        className="h-full w-1/5 bg-amber-50 rounded-lg "
       >
         <h2 className="text-2xl font-bold p-4 border-b border-gray-300">Users</h2>
         <ul className="p-4">
           {users.map((user, index) => (
-            <li key={index} className="p-2 bg-gray-800 text-white rounded mb-2">
+            <li key={index} className="p-2 bg-blue-900 text-white rounded mb-2">
               {user.username}
             </li>
           ))}
@@ -119,12 +121,13 @@ function App() {
 
       </aside>
       <section
-        className="w-3/4 bg-neutral-800 rounded-lg overflow-hidden">
+        className="w-4/5 bg-white text-black rounded-lg  p-3 overflow-hidden">
         <Editor
           height="100%"
+          loading={<p>Loading...</p>}
           defaultLanguage="javascript"
           defaultValue="// some comment"
-          theme="vs-dark"
+          theme="light"
           onMount={handleMount}
         />
       </section>
