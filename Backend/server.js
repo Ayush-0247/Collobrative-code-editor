@@ -12,8 +12,9 @@ const httpServer = createServer(app)
 
 const io = new Server(httpServer, {
     cors: {
-        origin: "*",
-        methods: [ "GET", "POST" ]
+        origin: ["*" , "localhost:5173"],
+        methods: [ "GET", "POST" ],
+        cretiantial:true // allow to send cookies and token between frontend and backend  but we don't need it here in our this project right now
     }
 })
 
